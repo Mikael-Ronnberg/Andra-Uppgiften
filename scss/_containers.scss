@@ -1,0 +1,87 @@
+@use "mixins" as mix;
+@use "variables" as var;
+
+#home {
+    min-height: 100vh;
+    &__content {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
+
+.nav-container {
+    width: 100%;
+    position: absolute;
+    @include mix.desktop {
+        li {
+            a {
+                display: inline;
+            }
+        }
+        .menu {
+            max-height: none;
+            // clear: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            height: 8vh;
+        }
+        .menu-icon {
+            display: none;
+        }
+    }
+}
+
+.image-container {
+    min-height: 100vh;
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    // @include mix.tablet {
+    //     // margin: 0 1em;
+    //     // column-gap: .1em;
+    // }
+    @include mix.desktop {
+        padding:0;
+        margin: 0 10em;
+    }
+    &__rakib {
+        @include mix.image-box;
+        &--box {
+            @include mix.quote-box;
+        }
+      }
+      &__alex {
+        @include mix.image-box;
+        &--box {
+            @include mix.quote-box;
+        }
+      }
+      &__lasse {
+        @include mix.image-box;
+        &--box {
+            @include mix.quote-box;
+        }
+      }
+      &__sebbe {
+        @include mix.image-box;
+        &--box {
+            @include mix.quote-box;
+        }
+      }
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    @include mix.tablet {
+        flex-direction: row;
+        justify-content: space-evenly;
+        min-height: 20vh;
+    }
+}

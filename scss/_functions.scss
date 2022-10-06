@@ -1,0 +1,73 @@
+@use "variables" as var;
+@use "mixins" as mix;
+
+.menu {
+    max-height: 0;
+    transition: max-height .3s ease-out;
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-icon {
+    padding: 25px 10px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+}
+
+.hamburger {
+    background: var.$primary;
+    display: block;
+    height: 5px;
+    width: 30px;
+    border-radius: 3px;
+    position: relative;
+    transition: background .3s ease-out;
+    &::before {
+        background: var.$primary;
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        border-radius: 3px;
+        position: absolute;
+        transition: all .3s ease-out;
+        top: 9px;
+    }
+    &::after {
+        background: var.$primary;
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        border-radius: 3px;
+        position: absolute;
+        transition: all .3s ease-out;
+        top: -9px;
+    }
+}
+
+.menu-btn {
+    display: none;
+    &:checked ~ .menu {
+        max-height: 240px;
+    }
+}
+
+
+.menu-btn:checked ~ .menu-icon .hamburger {
+    background: transparent;
+    &::before {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+    &::after {
+        transform: rotate(45deg);
+        top: 0;
+    }
+}
+
+

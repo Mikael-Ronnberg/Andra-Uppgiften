@@ -1,0 +1,106 @@
+@use "variables" as var;
+@use "mixins" as mix;
+@use "containers" as con;
+@use "functions" as fun;
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', serif, Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+#home {
+    background-image: url("/assets/negative-space-black-forest-dawn.jpg");
+    background-position: center;
+    background-size: cover;
+    &__content {
+        color: var.$primary;
+        h2 {
+            margin: 6.5em 2em 0em 2em;
+            font-size: 2.3em;
+            text-align: center;
+        }
+        span {
+            margin: 0em 3em 0em 3em;
+            font-size: 1.7em;
+            text-align: center;
+        }
+        a {
+            color: var.$primary;
+            margin: 9em 0 0 0;
+            font-size: 1.5em;
+        }
+    }
+}
+
+.nav-container {
+    background-color: rgba(255, 255, 255, 0.183);
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+        a {
+            display: block;
+            margin: 1em;
+            text-decoration: none;
+            @include mix.desktop {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.menu {
+    a {
+        color: var.$primary;
+        font-size: 1.2em;
+    }
+}
+
+#about {
+
+    h2 {
+        text-align: center;
+        font-size: 2em;
+    }
+    .down_arrow {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1em;
+        i {
+            color: var.$secondary;
+            font-size: 1.5em;
+        }
+    }
+}
+
+.footer-container {
+    min-height: 50vh;
+    background-color: var.$secondary;
+    color: var.$primary;
+    font-size: 2em;
+    padding: 1em;
+    ul {
+        line-height: 2em;
+    }
+    li {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+        color: var.$primary;
+    }
+    i {
+        padding-right: .5em;
+    }
+    @include mix.tablet {
+        font-size: 1.3em;
+        padding-top: 1em;
+        min-height: 20vh;
+    }
+}
