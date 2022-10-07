@@ -42,10 +42,6 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    // @include mix.tablet {
-    //     // margin: 0 1em;
-    //     // column-gap: .1em;
-    // }
     @include mix.desktop {
         padding:0;
         margin: 0 10em;
@@ -56,19 +52,19 @@
             @include mix.quote-box;
         }
       }
-      &__alex {
+    &__alex {
         @include mix.image-box;
         &--box {
             @include mix.quote-box;
         }
       }
-      &__lasse {
+    &__lasse {
         @include mix.image-box;
         &--box {
             @include mix.quote-box;
         }
       }
-      &__sebbe {
+    &__sebbe {
         @include mix.image-box;
         &--box {
             @include mix.quote-box;
